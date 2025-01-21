@@ -7,28 +7,31 @@
 
 .container {
     width: 100%;
-    height: 1000px;
+    height: 100vh;
     background: linear-gradient(135deg, #153677, #4e085f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .div1 {
-    display: table;
     text-align: center;
     background-color: aqua;
     width: 600px;
-    height: 450px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 21px;
-    border-radius: 50px;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    max-width: 90%; /* Limit the width for smaller screens */
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.div1 h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .div1 img {
-    width: 100px;
-    margin-top: 20px;
+    width: 80px;
+    margin: 10px 0;
 }
 
 .inputB {
@@ -37,9 +40,9 @@
     justify-content: space-between;
     background: #edeef0;
     border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 35px;
-    margin-top: 50px;
+    padding: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Wrap elements if they don't fit */
 }
 
 input {
@@ -48,45 +51,38 @@ input {
     outline: none;
     background: transparent;
     padding: 10px;
-    font-weight: 20px;
-    font-size: 20px;
+    font-size: 16px;
+    margin-right: 10px;
+    min-width: 60%; /* Ensure input doesn't shrink too much */
 }
 
 button {
     border: none;
     outline: none;
-    padding: 16px 50px;
+    padding: 10px 20px;
     background: #17b5b2;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
+    min-width: 30%; /* Ensure button stays visible */
+}
+
+.works-list ul {
+    list-style: none;
+    padding: 0;
 }
 
 ul li {
     display: flex;
-    list-style: none;
-    font-size: 25px;
-    padding: 12px 8px 12px 43px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
-    border-radius: 30px;
-    margin-top: 26px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
     background-color: #085f566d;
     color: #fff;
-}
-
-ul li::before {
-    content: '';
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    top: 12px;
-    left: 8px;
 }
 
 ul li.checked {
@@ -94,65 +90,31 @@ ul li.checked {
     text-decoration: line-through;
 }
 
-ul li.checked::before {
-    background-image: url(check.png);
-}
-
-#trashimg {
-    width: 35px;
-    position: absolute;
-    right: 20px;
-    top: -13px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-}
-
-ul li img:hover {
-    background: #000000;
-}
-
 /* Responsive Design for Phones */
 @media screen and (max-width: 600px) {
     .div1 {
-        width: 90%; /* Adjust width to fit smaller screens */
-        height: auto; /* Adjust height dynamically */
-        padding: 20px; /* Add padding for smaller screens */
-        top: 10px; /* Reduce top margin */
-        border-radius: 30px; /* Adjust border-radius */
+        width: 100%; /* Full width for the container */
+        padding: 15px;
     }
 
     .div1 img {
-        width: 80px; /* Reduce image size */
-    }
-
-    .inputB {
-        flex-direction: column; /* Stack elements vertically */
-        padding: 10px;
+        width: 60px; /* Smaller image */
     }
 
     input {
-        width: 100%; /* Full width for input fields */
-        font-size: 16px; /* Smaller font size */
+        font-size: 14px;
+        min-width: 100%; /* Full width on small screens */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add spacing when stacked */
     }
 
     button {
-        margin-top: 10px; /* Add spacing above button */
-        width: 100%; /* Full width for buttons */
+        min-width: 100%; /* Full width for buttons */
+        margin: 0;
     }
 
     ul li {
-        font-size: 20px; /* Reduce font size */
-        padding: 12px 10px; /* Adjust padding */
-    }
-
-    #trashimg {
-        width: 30px; /* Smaller size for trash icon */
-        height: 30px;
-        right: 10px; /* Adjust position */
-        top: 0px;
+        font-size: 16px; /* Slightly smaller font for items */
+        padding: 10px;
     }
 }
