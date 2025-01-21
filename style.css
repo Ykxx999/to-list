@@ -104,3 +104,12 @@ ul li.checked::before{
 ul li img:hover{
     background: #000000;
 }
+
+
+@media screen and (max-width: 600px)
+{
+    .div1{
+        font-size: 36px;
+        line-height: 50px;
+    }
+}
