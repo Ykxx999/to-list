@@ -114,7 +114,7 @@ ul li.checked {
     }
 
     ul li {
-        width: 100px;
+        width: 300px;
         font-size: 15px; /* Slightly smaller font for items */
         padding: 10px;
     }
