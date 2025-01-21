@@ -1,32 +1,37 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-.container{
+
+.container {
     width: 100%;
-    height:1000px;
+    height: 1000px;
     background: linear-gradient(135deg, #153677, #4e085f);
 }
-.div1{
+
+.div1 {
     display: table;
     text-align: center;
     background-color: aqua;
     width: 600px;
-    height:450px;
+    height: 450px;
     position: relative;
-    left: 650px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 21px;
     border-radius: 50px;
     padding-top: 20px;
     padding-bottom: 40px;
 }
-.div1 img{
+
+.div1 img {
     width: 100px;
     margin-top: 20px;
 }
-.inputB{
+
+.inputB {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,7 +41,8 @@
     margin-bottom: 35px;
     margin-top: 50px;
 }
-input{
+
+input {
     flex: 1;
     border: none;
     outline: none;
@@ -45,17 +51,17 @@ input{
     font-weight: 20px;
     font-size: 20px;
 }
-button{
+
+button {
     border: none;
     outline: none;
     padding: 16px 50px;
-    background:#17b5b2;
+    background: #17b5b2;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
 }
-
 
 ul li {
     display: flex;
@@ -70,6 +76,7 @@ ul li {
     background-color: #085f566d;
     color: #fff;
 }
+
 ul li::before {
     content: '';
     position: absolute;
@@ -81,14 +88,17 @@ ul li::before {
     top: 12px;
     left: 8px;
 }
-ul li.checked{
+
+ul li.checked {
     color: #11da25;
     text-decoration: line-through;
 }
-ul li.checked::before{
+
+ul li.checked::before {
     background-image: url(check.png);
 }
-#trashimg{
+
+#trashimg {
     width: 35px;
     position: absolute;
     right: 20px;
@@ -99,17 +109,50 @@ ul li.checked::before{
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
-
 }
-ul li img:hover{
+
+ul li img:hover {
     background: #000000;
 }
 
+/* Responsive Design for Phones */
+@media screen and (max-width: 600px) {
+    .div1 {
+        width: 90%; /* Adjust width to fit smaller screens */
+        height: auto; /* Adjust height dynamically */
+        padding: 20px; /* Add padding for smaller screens */
+        top: 10px; /* Reduce top margin */
+        border-radius: 30px; /* Adjust border-radius */
+    }
 
-@media screen and (max-width: 600px)
-{
-    .div1{
-        font-size: 36px;
-        line-height: 50px;
+    .div1 img {
+        width: 80px; /* Reduce image size */
+    }
+
+    .inputB {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 10px;
+    }
+
+    input {
+        width: 100%; /* Full width for input fields */
+        font-size: 16px; /* Smaller font size */
+    }
+
+    button {
+        margin-top: 10px; /* Add spacing above button */
+        width: 100%; /* Full width for buttons */
+    }
+
+    ul li {
+        font-size: 20px; /* Reduce font size */
+        padding: 12px 10px; /* Adjust padding */
+    }
+
+    #trashimg {
+        width: 30px; /* Smaller size for trash icon */
+        height: 30px;
+        right: 10px; /* Adjust position */
+        top: 0px;
     }
 }
